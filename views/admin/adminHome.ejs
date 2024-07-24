@@ -1,0 +1,46 @@
+<%- include('../layouts/header.ejs') %>
+    <div class="page-wrapper bg-gra-01 p-t-100 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <!-- <div class="card-heading"></div> -->
+                <div class="card-body">
+                    <h2 class="title2" style="font-family: 'Courier New', Courier, monospace;">WELCOME</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped custom-table">
+                            <thead>
+                                <tr>
+                                    <th class="data" scope="col">Username</th>
+                                    <th class="data" scope="col">E-mail</th>
+                                    <th class="data" scope="col">Contact</th>
+                                    <th class="data" scope="col">Place</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr scope="row">
+                                    <td>
+                                        <%= admin.name %>
+                                    </td>
+                                    <td>
+                                        <%= admin.email %>
+                                    </td>
+                                    <td>
+                                        <%= admin.phone %>
+                                    </td>
+                                    <td>
+                                        <%= admin.place %>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-t-10-3">
+                        <a href="/admin/dashboard"><button class="btn btn--pill btn--green"
+                                type="button">Info</button></a>
+                        <a href="/admin/logout"><button class="btn btn--pill btn--green"
+                                type="button">Logout</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../layouts/footer.ejs') %>

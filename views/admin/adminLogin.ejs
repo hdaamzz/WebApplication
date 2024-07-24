@@ -1,0 +1,36 @@
+<%- include('../layouts/header.ejs') %>
+    <div class="page-wrapper bg-gra-01 p-t-100 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-body">
+                    <h2 class="title1">ADMIN</h2>
+                    <form action="" method="POST">
+                        <div class="input-group">
+                            <input class="input--style-3" type="email" placeholder="Email" name="email" required>
+                        </div>
+                        <div class="input-group">
+                            <input class="input--style-3" type="password" placeholder="Password" name="password"
+                                required>
+                        </div>
+                        <div class="p-t-10-1">
+                            <button class="btn btn--pill btn--green" type="submit">Login</button>
+                        </div>
+                    </form>
+                    <div class="p-t-10-2">
+                        <h5 style="color: aliceblue;">If you are an user! Click <a href="/login">User</a></h5>
+                    </div>
+                    <% if(typeof message !=='undefined' ){ %>
+                        <h5 class="noti1 bold mb-5 pb-lg-2">
+                            <%= message %>
+                        </h5>
+                        <% } %>
+                            <% if(typeof logout !=='undefined' ){ %>
+                                <h5 class="noti1-c bold mb-5 pb-lg-2">
+                                    <%= logout %>
+                                </h5>
+                                <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../layouts/footer.ejs') %>

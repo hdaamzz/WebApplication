@@ -1,0 +1,116 @@
+<%- include('../layouts/header.ejs') %>
+    <div class="page-wrapper bg-gra-01 p-t-100 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <!-- <div class="card-heading"></div> -->
+                <div class="card-body">
+                    <h2 class="title2" style="font-family: 'Courier New', Courier, monospace;">EDIT USER</h2>
+                    <form action="" method="POST">
+                        <!-- <label for="name" style="color: aliceblue;">Name</label> -->
+                        <div class="input-group">
+
+                            <input class="input--style-3" type="text" placeholder="Username" name="name"
+                                value="<%= user.name %>">
+                        </div>
+                        <% if(typeof vname !=='undefined' ){ %>
+                            <h6 class="noti4 mb-5 pb-lg-2">
+                                <%= vname %>
+                                    </h5>
+                                    <% } %>
+                                        <div class="input-group">
+                                            <input class="input--style-3" type="email" placeholder="Email" name="email"
+                                                value="<%= user.email %>">
+                                        </div>
+                                        <% if(typeof vemail !=='undefined' ){ %>
+                                            <h6 class="noti4 mb-5 pb-lg-2">
+                                                <%= vemail %>
+                                                    </h5>
+                                                    <% } %>
+                                                        <div class="input-group">
+                                                            <input class="input--style-3" type="text" placeholder="Age"
+                                                                name="age" value="<%= user.age %>">
+                                                        </div>
+                                                        <% if(typeof vage !=='undefined' ){ %>
+                                                            <h6 class="noti4 mb-5 pb-lg-2">
+                                                                <%= vage %>
+                                                                    </h5>
+                                                                    <% } %>
+                                                                        <div class="input-group">
+                                                                            <input class="input--style-3" type="text"
+                                                                                placeholder="Place" name="place"
+                                                                                value="<%= user.place %>">
+                                                                        </div>
+                                                                        <% if(typeof vplace !=='undefined' ){ %>
+                                                                            <h6 class="noti4 mb-5 pb-lg-2">
+                                                                                <%= vplace %>
+                                                                                    </h5>
+                                                                                    <% } %>
+                                                                                        <div class="input-group">
+                                                                                            <input
+                                                                                                class="input--style-3"
+                                                                                                type="text"
+                                                                                                placeholder="Phone"
+                                                                                                name="phone"
+                                                                                                value="<%= user.phone %>">
+                                                                                            <input type="hidden"
+                                                                                                name="id"
+                                                                                                value="<%= user._id %>">
+
+                                                                                        </div>
+                                                                                        <% if(typeof vphone
+                                                                                            !=='undefined' ){ %>
+                                                                                            <h6
+                                                                                                class="noti4 mb-5 pb-lg-2">
+                                                                                                <%= vphone %>
+                                                                                                    </h5>
+                                                                                                    <% } %>
+                                                                                                        <!-- <div
+                                                                                                            class="input-group">
+                                                                                                            <input
+                                                                                                                class="input--style-3"
+                                                                                                                type="password"
+                                                                                                                placeholder="Password"
+                                                                                                                name="password"
+                                                                                                                value="<%= user.password %>">
+                                                                                                        </div>
+                                                                                                        <% if(typeof
+                                                                                                            vpass
+                                                                                                            !=='undefined'
+                                                                                                            ){ %>
+                                                                                                            <h6
+                                                                                                                class="noti4 mb-5 pb-lg-2">
+                                                                                                                <%= vpass
+                                                                                                                    %>
+                                                                                                                    </h5>
+                                                                                                                    <% }
+                                                                                                                        %> -->
+
+                                                                                                                        <div
+                                                                                                                            class="p-t-10">
+                                                                                                                            <button
+                                                                                                                                class="btn btn--pill btn--green"
+                                                                                                                                type="submit">Update</button>
+                                                                                                                            <a class="atag"
+                                                                                                                                href="/admin/dashboard"><button
+                                                                                                                                    class="btn btn--pill btn--green"
+                                                                                                                                    type="button">Back
+                                                                                                                                    to
+                                                                                                                                    Dashboard</button>
+                                                                                                                            </a>
+                                                                                                                        </div>
+                    </form>
+                    <% if(locals.failed){ %>
+                        <h5 class=" noti1 bold mb-5 pb-lg-2">
+                            <%= failed %>
+                        </h5>
+                        <% } %>
+                            <% if(typeof message !=='undefined' ){ %>
+                                <h5 class="noti bold mb-5 pb-lg-2">
+                                    <%= message %>
+                                </h5>
+                                <% } %>
+                </div>
+            </div>
+        </div>
+    </div>
+    <%- include('../layouts/footer.ejs') %>

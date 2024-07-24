@@ -1,0 +1,92 @@
+<%- include('../layouts/header.ejs') %>
+    <div class="page-wrapper bg-gra-01 p-t-100 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w780">
+            <div class="card card-3">
+                <div class="card-body card-body1">
+                    <h2 class="p-l-38" style="font-family: 'Courier New', Courier, monospace;">DASH BOARD</h2>
+                    <div class="p-t-10-p">
+                        <input type="text" id="search" class="radius" placeholder="Search here">
+                    </div>
+                    <div class="p-t-10-p">
+                        <!-- <input type="text" id="search" class="radius" placeholder="Search here"> -->
+                    </div>
+                    <div class="p-t-10-p">
+                        <!-- <input type="text" id="search" class="radius" placeholder="Search here"> -->
+                    </div>
+                    <div class="table-responsive">
+                        <table class="table table-striped custom-table custom-table1">
+                            <thead>
+                                <tr>
+                                    <th class="data" scope="col">Username</th>
+                                    <th class="data" scope="col">E-mail</th>
+                                    <th class="data" scope="col">Contact</th>
+                                    <th class="data" scope="col">Place</th>
+                                    <th class="data" scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% if(users.length> 0){
+                                    for(let i=0;i<users.length;i++){ %>
+                                        <tr scope="row">
+                                            <td>
+                                                <%= users[i].name %>
+                                            </td>
+                                            <td>
+                                                <%= users[i].email %>
+                                            </td>
+                                            <td>
+                                                <%= users[i].phone %>
+                                            </td>
+                                            <td>
+                                                <%= users[i].place %>
+                                            </td>
+                                            <td>
+                                              <button style="color: aliceblue;"><a href="/admin/edit-user?id=<%= users[i]._id %>"
+                                                style="text-decoration: none;">EDIT </a></button> 
+                                                
+                                            <td>
+
+                                               <button id="deletebutton" data-id="<%= users[i]._id %>" style="color: aliceblue;"><a href="/admin/delete-user?id=<%= users[i]._id %>"
+                                                style="text-decoration: none;"> DELETE</a></button>
+                                             
+                                            </td>
+                                        </tr>
+                                        <% } }else{ %>
+                                            <tr scope="row">
+                                                Users Not Found!!!
+                                            </tr>
+                                            <% } %>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="p-t-10-1">
+                        <a href="/admin/admin-Home"><button class="btn btn--pill btn--green"
+                                type="button">Home</button></a>
+                    </div>
+                    <div class="p-t-10-4">
+                        <h5 style="color: aliceblue;">Create An User <a href="/admin/new-user">Click here</a></h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+
+        document.getElementById("search").addEventListener('keyup', function () {
+            var filter = this.value.toLowerCase();
+            var rows = document.querySelectorAll('table tr');
+
+            rows.forEach(function (row) {
+                var text = row.textContent.toLowerCase();
+                row.style.display = text.includes(filter) ? '' : 'none';
+            });
+        });
+
+    </script>
+    
+
+
+
+    <%- include('../layouts/footer.ejs') %>
